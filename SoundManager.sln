@@ -24,6 +24,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_console", "projects\te
 		{5949D4E6-16F4-4A68-B077-09B7E27F4C2A} = {5949D4E6-16F4-4A68-B077-09B7E27F4C2A}
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "application", "projects\application\application.vcxproj", "{6B076A11-0DD5-47AB-9A56-06A3ADD0E0E1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5949D4E6-16F4-4A68-B077-09B7E27F4C2A} = {5949D4E6-16F4-4A68-B077-09B7E27F4C2A}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -56,6 +61,14 @@ Global
 		{230EC33F-29C6-4F38-91B5-8986EC1A0ECD}.Release|x64.Build.0 = Release|x64
 		{230EC33F-29C6-4F38-91B5-8986EC1A0ECD}.Release|x86.ActiveCfg = Release|Win32
 		{230EC33F-29C6-4F38-91B5-8986EC1A0ECD}.Release|x86.Build.0 = Release|Win32
+		{6B076A11-0DD5-47AB-9A56-06A3ADD0E0E1}.Debug|x64.ActiveCfg = Debug|x64
+		{6B076A11-0DD5-47AB-9A56-06A3ADD0E0E1}.Debug|x64.Build.0 = Debug|x64
+		{6B076A11-0DD5-47AB-9A56-06A3ADD0E0E1}.Debug|x86.ActiveCfg = Debug|x64
+		{6B076A11-0DD5-47AB-9A56-06A3ADD0E0E1}.Debug|x86.Build.0 = Debug|x64
+		{6B076A11-0DD5-47AB-9A56-06A3ADD0E0E1}.Release|x64.ActiveCfg = Release|x64
+		{6B076A11-0DD5-47AB-9A56-06A3ADD0E0E1}.Release|x64.Build.0 = Release|x64
+		{6B076A11-0DD5-47AB-9A56-06A3ADD0E0E1}.Release|x86.ActiveCfg = Release|x64
+		{6B076A11-0DD5-47AB-9A56-06A3ADD0E0E1}.Release|x86.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -64,6 +77,7 @@ Global
 		{5949D4E6-16F4-4A68-B077-09B7E27F4C2A} = {D5206217-9095-4683-AF9B-22B472D74E2B}
 		{07E6E411-F9B0-4850-A897-0041B3E25193} = {2350ABCF-BBD5-40DC-9A9C-19FBE4BEBDA2}
 		{230EC33F-29C6-4F38-91B5-8986EC1A0ECD} = {D5206217-9095-4683-AF9B-22B472D74E2B}
+		{6B076A11-0DD5-47AB-9A56-06A3ADD0E0E1} = {D5206217-9095-4683-AF9B-22B472D74E2B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CD119CD7-06EE-4A19-A643-8F8288349695}
