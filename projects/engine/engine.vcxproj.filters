@@ -19,6 +19,9 @@
     <Filter Include="src\windows\event">
       <UniqueIdentifier>{96f18f38-b719-4f6f-bdff-8ae4f811a14e}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\json">
+      <UniqueIdentifier>{ba1b2679-fb96-4590-a77e-8e5bd9b03631}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\com\audio\audio_manager.cpp">
@@ -32,6 +35,9 @@
     </ClCompile>
     <ClCompile Include="src\com\audio\audio_session_notification.cpp">
       <Filter>src\com\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="preset_controller.cpp">
+      <Filter>src\json</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -59,6 +65,9 @@
     </ClInclude>
     <ClInclude Include="src\com\com_result.h">
       <Filter>src\com</Filter>
+    </ClInclude>
+    <ClInclude Include="src\json\preset_controller.h">
+      <Filter>src\json</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
