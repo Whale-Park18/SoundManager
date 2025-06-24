@@ -8,10 +8,10 @@
 #include <vector>
 #include <memory>
 
-#include <atlbase.h>		// COM °ü·Ã Çì´õ
-#include <mmdeviceapi.h>	// ¿Àµğ¿À ÀåÄ¡ °ü·Ã ÀÎÅÍÆäÀÌ½º
-#include <audiopolicy.h>	// ¿Àµğ¿À ¼¼¼Ç Á¦¾î ÀÎÅÍÆäÀÌ½º
-#include <endpointvolume.h>	// º¼·ı Á¦¾î ÀÎÅÍÆäÀÌ½º
+#include <atlbase.h>		// COM ê´€ë ¨ í—¤ë”
+#include <mmdeviceapi.h>	// ì˜¤ë””ì˜¤ ì¥ì¹˜ ê´€ë ¨ ì¸í„°í˜ì´ìŠ¤
+#include <audiopolicy.h>	// ì˜¤ë””ì˜¤ ì„¸ì…˜ ì œì–´ ì¸í„°í˜ì´ìŠ¤
+#include <endpointvolume.h>	// ë³¼ë¥¨ ì œì–´ ì¸í„°í˜ì´ìŠ¤
 
 namespace engine::com::audio
 {
@@ -23,28 +23,28 @@ namespace engine::com::audio
 
 		struct AudioSettingInfo
 		{
-			DWORD processId = 0;	  // ÇÁ·Î¼¼½º ID
-			float volumeLevel = 0.0f; // º¼·ı ·¹º§ (0.0f ~ 1.0f)
+			DWORD processId = 0;	  // í”„ë¡œì„¸ìŠ¤ ID
+			float volumeLevel = 0.0f; // ë³¼ë¥¨ ë ˆë²¨ (0.0f ~ 1.0f)
 		};
 
 		AudioManager();
 		virtual ~AudioManager() = default;
 
 		/// <summary>
-		/// ±âº» ÀåÄ¡ÀÇ ¿Àµğ¿À º¼·ı ¼³Á¤
+		/// ê¸°ë³¸ ì¥ì¹˜ì˜ ì˜¤ë””ì˜¤ ë³¼ë¥¨ ì„¤ì •
 		/// </summary>
 		/// <param name="volumeLevel"></param>
 		/// <returns></returns>
 		HRESULT SetAudioMasterVolume(float volumeLevel);
 
 		/// <summary>
-		/// ±âº» ÀåÄ¡ÀÇ ¿Àµğ¿À º¼·ı ¹İÈ¯
+		/// ê¸°ë³¸ ì¥ì¹˜ì˜ ì˜¤ë””ì˜¤ ë³¼ë¥¨ ë°˜í™˜
 		/// </summary>
 		/// <returns></returns>
 		ResultVolume GetAudioMasterVolume() const;
 
 		/// <summary>
-		/// ¿Àµğ¿À ¼½¼ÇÀÇ ¼³Á¤ ·¹º§ ¼³Á¤
+		/// ì˜¤ë””ì˜¤ ì„¹ì…˜ì˜ ì„¤ì • ë ˆë²¨ ì„¤ì •
 		/// </summary>
 		/// <param name="processId"></param>
 		/// <param name="volumeLevel"></param>
@@ -52,7 +52,7 @@ namespace engine::com::audio
 		HRESULT SetAudioSessionSettings(DWORD processId, float volumeLevel);
 
 		/// <summary>
-		/// ¿Àµğ¿À ¼½¼ÇÀÇ ¼³Á¤ ¸®½ºÆ® ¹İÈ¯
+		/// ì˜¤ë””ì˜¤ ì„¹ì…˜ì˜ ì„¤ì • ë¦¬ìŠ¤íŠ¸ ë°˜í™˜
 		/// </summary>
 		/// <param name="audioSessions"></param>
 		void GetAudioSessionSettings(std::vector<AudioSettingInfo>& audioSessions) const;
@@ -60,59 +60,59 @@ namespace engine::com::audio
 	private:
 
 		/// <summary>
-		/// ¿Àµğ¿À ÀåÄ¡ °ü·Ã ÃÊ±âÈ­
+		/// ì˜¤ë””ì˜¤ ì¥ì¹˜ ê´€ë ¨ ì´ˆê¸°í™”
 		/// </summary>
-		/// <returns>°á°ú</returns>
+		/// <returns>ê²°ê³¼</returns>
 		HRESULT InitializeMMDevice();
 
 		/// <summary>
-		/// ¿Àµğ¿À ¼¼¼Ç °ü·Ã ÃÊ±âÈ­
+		/// ì˜¤ë””ì˜¤ ì„¸ì…˜ ê´€ë ¨ ì´ˆê¸°í™”
 		/// </summary>
-		/// <returns>°á°ú</returns>
+		/// <returns>ê²°ê³¼</returns>
 		HRESULT InitializeAudioSession();
 
 		/// <summary>
-		/// ¿Àµğ¿À ½Ã½ºÅÛ º¼·ı Á¦¾î ÃÊ±âÈ­
+		/// ì˜¤ë””ì˜¤ ì‹œìŠ¤í…œ ë³¼ë¥¨ ì œì–´ ì´ˆê¸°í™”
 		/// </summary>
-		/// <returns>°á°ú</returns>
+		/// <returns>ê²°ê³¼</returns>
 		HRESULT InitializeEndpointVolume();
 
 		/// <summary>
 		/// 
 		/// </summary>
-		/// <returns>°á°ú</returns>
+		/// <returns>ê²°ê³¼</returns>
 		HRESULT InitializeAudioSessionControlList();
 
 		/// <summary>
-		/// ¿Àµğ¿À ÀåÄ¡ °ü·Ã ÀÌº¥Æ® ¸®½º³Ê Ãß°¡
+		/// ì˜¤ë””ì˜¤ ì¥ì¹˜ ê´€ë ¨ ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ ì¶”ê°€
 		/// </summary>
-		/// <returns>°á°ú</returns>
+		/// <returns>ê²°ê³¼</returns>
 		HRESULT AddAudioDeviceEventListener();
 
 		/// <summary>
-		/// ¿Àµğ¿À ¼½¼Ç °ü·Ã ÀÌº¥Æ® ¸®½º³Ê Á¦°Å
+		/// ì˜¤ë””ì˜¤ ì„¹ì…˜ ê´€ë ¨ ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ ì œê±°
 		/// </summary>
-		/// <returns>°á°ú</returns>
+		/// <returns>ê²°ê³¼</returns>
 		HRESULT AddAudioSessionEventListener();
 
-		// ¿Àµğ¿À ÀåÄ¡ °ü·Ã
-		CComPtr<IMMDeviceEnumerator>	 _pDeviceEnumerator = nullptr; // ¿Àµğ¿À ÀåÄ¡ ¿­°ÅÀÚ (»ç¿ë°¡´ÉÇÑ ¿Àµğ¿À ÀåÄ¡ ³ª¿­)
-		CComPtr<IMMDevice>				 _pDevice			= nullptr; // ±âº» ¿Àµğ¿À ÀåÄ¡ (¿¹ ½ºÇÇÄ¿, ÇìµåÆù µî)
+		// ì˜¤ë””ì˜¤ ì¥ì¹˜ ê´€ë ¨
+		CComPtr<IMMDeviceEnumerator>	 _pDeviceEnumerator = nullptr; // ì˜¤ë””ì˜¤ ì¥ì¹˜ ì—´ê±°ì (ì‚¬ìš©ê°€ëŠ¥í•œ ì˜¤ë””ì˜¤ ì¥ì¹˜ ë‚˜ì—´)
+		CComPtr<IMMDevice>				 _pDevice			= nullptr; // ê¸°ë³¸ ì˜¤ë””ì˜¤ ì¥ì¹˜ (ì˜ˆ ìŠ¤í”¼ì»¤, í—¤ë“œí° ë“±)
 		
-		// ¿Àµğ¿À ¼¼¼Ç °ü·Ã
-		CComPtr<IAudioSessionManager2>	 _pAudioSessionManager	  = nullptr; // ¿Àµğ¿À ¼¼¼Ç °ü¸® ÀÎÅÍÆäÀÌ½º (¿Àµğ¿À ¼½¼ÇÀ» °ü¸®ÇÏ°í ÇØ´ç ÄÁÆ®·Ñ¿¡ ´ëÇÑ ¾×¼¼½º Á¦°ø)
-		CComPtr<IAudioSessionEnumerator> _pAudioSessionEnumerator = nullptr; // ¿Àµğ¿À ¼¼¼Ç ¿­°Å±â
+		// ì˜¤ë””ì˜¤ ì„¸ì…˜ ê´€ë ¨
+		CComPtr<IAudioSessionManager2>	 _pAudioSessionManager	  = nullptr; // ì˜¤ë””ì˜¤ ì„¸ì…˜ ê´€ë¦¬ ì¸í„°í˜ì´ìŠ¤ (ì˜¤ë””ì˜¤ ì„¹ì…˜ì„ ê´€ë¦¬í•˜ê³  í•´ë‹¹ ì»¨íŠ¸ë¡¤ì— ëŒ€í•œ ì•¡ì„¸ìŠ¤ ì œê³µ)
+		CComPtr<IAudioSessionEnumerator> _pAudioSessionEnumerator = nullptr; // ì˜¤ë””ì˜¤ ì„¸ì…˜ ì—´ê±°ê¸°
 		
-		// ¿Àµğ¿À ½Ã½ºÅÛ º¼·ı Á¦¾î °ü·Ã
-		CComPtr<IAudioEndpointVolume>	 _pEndpointVolume = nullptr; // ¿Àµğ¿À º¼·ı Á¦¾î ÀÎÅÍÆäÀÌ½º
+		// ì˜¤ë””ì˜¤ ì‹œìŠ¤í…œ ë³¼ë¥¨ ì œì–´ ê´€ë ¨
+		CComPtr<IAudioEndpointVolume>	 _pEndpointVolume = nullptr; // ì˜¤ë””ì˜¤ ë³¼ë¥¨ ì œì–´ ì¸í„°í˜ì´ìŠ¤
 
-		// ¿Àµğ¿À ¼½¼Ç º¼·ı Á¦¾î °ü·Ã
-		std::vector<CComPtr<IAudioSessionControl>> _audioSessionControlList; // ¿Àµğ¿À ¼½¼Ç ÄÁÆ®·Ñ ¸®½ºÆ®
+		// ì˜¤ë””ì˜¤ ì„¹ì…˜ ë³¼ë¥¨ ì œì–´ ê´€ë ¨
+		std::vector<CComPtr<IAudioSessionControl>> _audioSessionControlList; // ì˜¤ë””ì˜¤ ì„¹ì…˜ ì»¨íŠ¸ë¡¤ ë¦¬ìŠ¤íŠ¸
 
-		// ¿Àµğ¿À ÀåÄ¡ ÀÌº¥Æ® ¸®½º³Ê ¹× ¼¼¼Ç ÀÌº¥Æ® ¸®½º³Ê
-		CComPtr<MMNotificationClient>	  _pAudioDeviceEventListener = nullptr; // ¿Àµğ¿À ÀåÄ¡ ÀÌº¥Æ® ¸®½º³Ê
-		CComPtr<AudioSessionEvents>		  _pAudioSessionEvents		 = nullptr; // ¿Àµğ¿À ¼¼¼Ç ÀÌº¥Æ® ¸®½º³Ê
-		CComPtr<AudioSessionNotification> _pAudioSessionNotification = nullptr; // ¿Àµğ¿À ¼¼¼Ç ¾Ë¸²
+		// ì˜¤ë””ì˜¤ ì¥ì¹˜ ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ ë° ì„¸ì…˜ ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ
+		CComPtr<MMNotificationClient>	  _pAudioDeviceEventListener = nullptr; // ì˜¤ë””ì˜¤ ì¥ì¹˜ ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ
+		CComPtr<AudioSessionEvents>		  _pAudioSessionEvents		 = nullptr; // ì˜¤ë””ì˜¤ ì„¸ì…˜ ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ
+		CComPtr<AudioSessionNotification> _pAudioSessionNotification = nullptr; // ì˜¤ë””ì˜¤ ì„¸ì…˜ ì•Œë¦¼
 	};
 }
 

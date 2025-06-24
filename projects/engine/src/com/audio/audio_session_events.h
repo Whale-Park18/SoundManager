@@ -4,7 +4,7 @@
 namespace engine::com::audio
 {
 	/// <summary>
-	/// ¿Àµğ¿À ¼½¼Ç ÀÌº¥Æ®¸¦ Ã³¸®ÇÏ´Â Å¬·¡½º
+	/// ì˜¤ë””ì˜¤ ì„¹ì…˜ ì´ë²¤íŠ¸ë¥¼ ì²˜ë¦¬í•˜ëŠ” í´ë˜ìŠ¤
 	/// </summary>
 	class AudioSessionEvents : public IAudioSessionEvents
 	{
@@ -12,13 +12,13 @@ namespace engine::com::audio
 		AudioSessionEvents();
 		virtual ~AudioSessionEvents() = default;
 
-		// IUnknownÀ»(¸¦) ÅëÇØ »ó¼ÓµÊ
+		// IUnknownì„(ë¥¼) í†µí•´ ìƒì†ë¨
 
 		HRESULT __stdcall QueryInterface(REFIID riid, void** ppvObject) override;
 		ULONG __stdcall AddRef(void) override;
 		ULONG __stdcall Release(void) override;
 
-		// IAudioSessionEventsÀ»(¸¦) ÅëÇØ »ó¼ÓµÊ
+		// IAudioSessionEventsì„(ë¥¼) í†µí•´ ìƒì†ë¨
 
 		HRESULT __stdcall OnDisplayNameChanged(LPCWSTR NewDisplayName, LPCGUID EventContext) override;
 		HRESULT __stdcall OnIconPathChanged(LPCWSTR NewIconPath, LPCGUID EventContext) override;

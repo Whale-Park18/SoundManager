@@ -24,7 +24,7 @@ HRESULT engine::com::audio::AudioManager::SetAudioMasterVolume(float volumeLevel
 {
 	HRESULT hr = E_FAIL;
 
-	do // Èå¸§ Á¦¾î¿ë do-while
+	do // íë¦„ ì œì–´ìš© do-while
 	{
 		if(0.0f < volumeLevel || volumeLevel < 1.0f)
 		{
@@ -98,10 +98,10 @@ HRESULT engine::com::audio::AudioManager::InitializeMMDevice()
 
 	HRESULT hr = E_FAIL;
 
-	do // Èå¸§ Á¦¾î¿ë do-while
+	do // íë¦„ ì œì–´ìš© do-while
 	{
-		// ¿Àµğ¿À ÀåÄ¡ ¿­°ÅÀÚ ÃÊ±âÈ­
-		// CComPtr °´Ã¼´Â ÀÌ¹Ì ÇÒ´çµÆÀ» ¶§, ´Ù½Ã ÃÊ±âÈ­ÇÏ·Á°í ÇÏ¸é ¿¡·¯°¡ ¹ß»ı
+		// ì˜¤ë””ì˜¤ ì¥ì¹˜ ì—´ê±°ì ì´ˆê¸°í™”
+		// CComPtr ê°ì²´ëŠ” ì´ë¯¸ í• ë‹¹ëì„ ë•Œ, ë‹¤ì‹œ ì´ˆê¸°í™”í•˜ë ¤ê³  í•˜ë©´ ì—ëŸ¬ê°€ ë°œìƒ
 		if (_pDeviceEnumerator != nullptr)
 		{
 			_pDeviceEnumerator.Release();
@@ -115,7 +115,7 @@ HRESULT engine::com::audio::AudioManager::InitializeMMDevice()
 			break;
 		}
 
-		// ±âº» ¿Àµğ¿À ÀåÄ¡ ÃÊ±âÈ­
+		// ê¸°ë³¸ ì˜¤ë””ì˜¤ ì¥ì¹˜ ì´ˆê¸°í™”
 		if(_pDevice != nullptr)
 		{
 			_pDevice.Release();
@@ -140,7 +140,7 @@ HRESULT engine::com::audio::AudioManager::InitializeAudioSession()
 	
 	HRESULT hr = E_FAIL;
 
-	do // Èå¸§ Á¦¾î¿ë do-wihle
+	do // íë¦„ ì œì–´ìš© do-wihle
 	{
 		if(_pDevice == nullptr)
 		{
@@ -150,8 +150,8 @@ HRESULT engine::com::audio::AudioManager::InitializeAudioSession()
 			break;
 		}
 
-		// ±âº» ¿Àµğ¿À ÀåÄ¡ÀÇ ¼½¼Ç ¸Å´ÏÀú ÃÊ±âÈ­
-		// CComPtr °´Ã¼´Â ÀÌ¹Ì ÇÒ´çµÆÀ» ¶§, ´Ù½Ã ÃÊ±âÈ­ÇÏ·Á°í ÇÏ¸é ¿¡·¯°¡ ¹ß»ı
+		// ê¸°ë³¸ ì˜¤ë””ì˜¤ ì¥ì¹˜ì˜ ì„¹ì…˜ ë§¤ë‹ˆì € ì´ˆê¸°í™”
+		// CComPtr ê°ì²´ëŠ” ì´ë¯¸ í• ë‹¹ëì„ ë•Œ, ë‹¤ì‹œ ì´ˆê¸°í™”í•˜ë ¤ê³  í•˜ë©´ ì—ëŸ¬ê°€ ë°œìƒ
 		if(_pAudioSessionManager != nullptr)
 		{
 			_pAudioSessionManager.Release();
@@ -165,7 +165,7 @@ HRESULT engine::com::audio::AudioManager::InitializeAudioSession()
 			break;
 		}
 
-		// ¿Àµğ¿À ¼½¼Ç ¿­°ÅÀÚ ÃÊ±âÈ­
+		// ì˜¤ë””ì˜¤ ì„¹ì…˜ ì—´ê±°ì ì´ˆê¸°í™”
 		if (_pAudioSessionEnumerator != nullptr)
 		{
 			_pAudioSessionEnumerator.Release();
