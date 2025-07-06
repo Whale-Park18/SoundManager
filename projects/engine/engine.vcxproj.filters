@@ -19,14 +19,11 @@
     <Filter Include="src\windows\event">
       <UniqueIdentifier>{96f18f38-b719-4f6f-bdff-8ae4f811a14e}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\json">
-      <UniqueIdentifier>{ba1b2679-fb96-4590-a77e-8e5bd9b03631}</UniqueIdentifier>
-    </Filter>
     <Filter Include="src\common">
       <UniqueIdentifier>{2392aa2f-f171-4dcc-af8f-14c7ac09d0e1}</UniqueIdentifier>
     </Filter>
-    <Filter Include="src\json\preset">
-      <UniqueIdentifier>{ce0adde1-35ec-4ded-b714-fd1184527cd2}</UniqueIdentifier>
+    <Filter Include="src\data">
+      <UniqueIdentifier>{6e651f44-2339-450e-85b3-b8561c1978e4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -42,8 +39,8 @@
     <ClCompile Include="src\com\audio\audio_session_notification.cpp">
       <Filter>src\com\audio</Filter>
     </ClCompile>
-    <ClCompile Include="src\json\preset\preset_controller.cpp">
-      <Filter>src\json\preset</Filter>
+    <ClCompile Include="src\data\preset_json_converter.cpp">
+      <Filter>src\data</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -78,8 +75,14 @@
     <ClInclude Include="src\common\tfstream.h">
       <Filter>src\common</Filter>
     </ClInclude>
-    <ClInclude Include="src\json\preset\preset_controller.h">
-      <Filter>src\json\preset</Filter>
+    <ClInclude Include="src\data\preset_json_converter.h">
+      <Filter>src\data</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\json_helper.h">
+      <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\common\logger.h">
+      <Filter>src\common</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
