@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="test_data\test_in_preset.json.json">
+      <Filter>test_data</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{7f5df172-6d33-41f9-825e-3de7fe5ad206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="test_data">
+      <UniqueIdentifier>{239bc0c3-a17d-49ac-8aa9-bce3b12bbd51}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\google_test_config.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_data.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_common.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\test_com.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
