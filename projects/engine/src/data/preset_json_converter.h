@@ -36,6 +36,7 @@ namespace engine::data
 		virtual ~PresetJsonConverter() = default;
 
 		void SetPresetJsonPath(const std::filesystem::path& presetJsonPath) { _presetJsonPath = presetJsonPath; }
+		const std::vector<Preset>& GetPresetList() const { return _presetList; }
 		
 		/// <summary>
 		/// 직렬화(Json to variable)를 수행합니다.
