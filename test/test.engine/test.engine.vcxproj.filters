@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="test_data\test_in_preset.json.json">
+    <None Include="test_data\test_in_preset.json">
       <Filter>test_data</Filter>
     </None>
   </ItemGroup>

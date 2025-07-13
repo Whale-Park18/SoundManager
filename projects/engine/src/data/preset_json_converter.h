@@ -18,8 +18,8 @@ namespace engine::data
 
 	struct App
 	{
-		std::string appName;
-		float appVolume = 0.0f;
+		std::string name;
+		float volume = 0.0f;
 	};
 
 	struct Preset
@@ -32,10 +32,10 @@ namespace engine::data
 	class PresetJsonConverter
 	{
 	public:
-		PresetJsonConverter(std::filesystem::path presetJsonPath);
+		PresetJsonConverter(std::filesystem::path presetJsonPath = "");
 		virtual ~PresetJsonConverter() = default;
 
-		void SetPresetJsonPath(const std::filesystem::path& presetJsonPath) { _presetJsonPath = presetJsonPath; }
+		void SetPresetJsonPath(std::filesystem::path&& presetJsonPath);
 		const std::vector<Preset>& GetPresetList() const { return _presetList; }
 		
 		/// <summary>
@@ -55,13 +55,13 @@ namespace engine::data
 		/// </summary>
 		/// <param name="preset">추가할 Preset 객체에 대한 상수 참조</param>
 		/// <returns>추가된 프리셋의 인덱스</returns>
-		std::size_t AddPreset(Preset& preset);
+		std::size_t AddPreset(Preset&& preset);
 
 		/// <summary>
 		/// 지정된 인덱스에 해당하는 프리셋을 삭제합니다.
 		/// </summary>
 		/// <param name="index">삭제할 프리셋의 인덱스</param>
-		void DeletePreset(const std::size_t index);
+		bool DeletePreset(const std::size_t index);
 
 		/// <summary>
 		/// 지정된 프리셋 인덱스에 앱을 추가하고, 추가된 앱의 인덱스를 반환합니다.
@@ -69,14 +69,14 @@ namespace engine::data
 		/// <param name="presetIndex">앱을 추가할 프리셋의 인덱스입니다.</param>
 		/// <param name="app">추가할 App 객체입니다.</param>
 		/// <returns>추가된 앱의 인덱스(크기_t 타입)를 반환합니다.</returns>
-		std::size_t AddApp(const std::size_t presetIndex, App& app);
+		std::size_t AddApp(const std::size_t presetIndex, App&& app);
 
 		/// <summary>
 		/// 지정된 프리셋 인덱스와 앱 인덱스에 해당하는 앱을 삭제합니다.
 		/// </summary>
 		/// <param name="presetIndex"></param>
 		/// <param name="appIndex"></param>
-		void DeleteApp(const std::size_t presetIndex, const std::size_t appIndex);
+		bool DeleteApp(const std::size_t presetIndex, const std::size_t appIndex);
 
 	private:
 
@@ -87,9 +87,22 @@ namespace engine::data
 		/// <returns>프리셋 JSON이 유효하면 true, 그렇지 않으면 false를 반환합니다.</returns>
 		bool IsValidPresetJson(const rapidjson::Document& doc) const;
 
-		bool IsInvalidPresetIndex(const std::size_t index) const;
+		template<typename T>
+		bool ExistsName(const std::vector<T>& list, const T& newItem) const
+		{
+			// 중복된 이름이 있는지 확인
+			auto iterator = std::find_if(list.begin(), list.end(),
+				[&](const T& item) -> bool {
+					return item.name == newItem.name;
+				}
+			);
 
-		bool IsInvalidAppIndex(const std::size_t presetIndex, const std::size_t appIndex) const;
+			return iterator != list.end();
+		}
+
+		bool IsValidPresetIndex(const std::size_t index) const;
+
+		bool IsValidAppIndex(const std::size_t presetIndex, const std::size_t appIndex) const;
 
 		std::filesystem::path _presetJsonPath;
 		std::vector<Preset> _presetList;
