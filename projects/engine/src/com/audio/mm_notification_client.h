@@ -6,7 +6,7 @@
 namespace engine::com::audio
 {
 	/// <summary>
-	/// ¿Àµğ¿À ÀåÄ¡ ÀÌº¥Æ® ¸®½º³Ê Å¬·¡½º
+	/// ì˜¤ë””ì˜¤ ì¥ì¹˜ ì´ë²¤íŠ¸ ë¦¬ìŠ¤ë„ˆ í´ë˜ìŠ¤
 	/// </summary>
 	class MMNotificationClient : public IMMNotificationClient
 	{
@@ -14,12 +14,12 @@ namespace engine::com::audio
 		MMNotificationClient();
 		virtual~MMNotificationClient() = default;
 
-		// IUnknownÀ»(¸¦) ÅëÇØ »ó¼ÓµÊ
+		// IUnknownì„(ë¥¼) í†µí•´ ìƒì†ë¨
 		HRESULT __stdcall QueryInterface(REFIID riid, void** ppvObject) override;
 		ULONG __stdcall AddRef(void) override;
 		ULONG __stdcall Release(void) override;
 
-		// IMMNotificationClientÀ»(¸¦) ÅëÇØ »ó¼ÓµÊ
+		// IMMNotificationClientì„(ë¥¼) í†µí•´ ìƒì†ë¨
 		HRESULT __stdcall OnDeviceStateChanged(LPCWSTR pwstrDeviceId, DWORD dwNewState) override;
 		HRESULT __stdcall OnDeviceAdded(LPCWSTR pwstrDeviceId) override;
 		HRESULT __stdcall OnDeviceRemoved(LPCWSTR pwstrDeviceId) override;
@@ -29,6 +29,6 @@ namespace engine::com::audio
 	private:
 		ULONG _refCount = 0;
 
-		// ÇÔ¼ö °´Ã¼¸¦ »ç¿ëÇÏ¿© Äİ¹éÀ» µî·Ï
+		// í•¨ìˆ˜ ê°ì²´ë¥¼ ì‚¬ìš©í•˜ì—¬ ì½œë°±ì„ ë“±ë¡
 	};
 }

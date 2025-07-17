@@ -6,7 +6,7 @@
 namespace engine::com::audio
 {
 	/// <summary>
-	/// ¿Àµğ¿À »ı¼º ¼½¼Ç ÀÌº¥Æ®¸¦ Ã³¸®ÇÏ´Â Å¬·¡½º
+	/// ì˜¤ë””ì˜¤ ìƒì„± ì„¹ì…˜ ì´ë²¤íŠ¸ë¥¼ ì²˜ë¦¬í•˜ëŠ” í´ë˜ìŠ¤
 	/// </summary>
 	class AudioSessionNotification : public IAudioSessionNotification
 	{
@@ -14,13 +14,13 @@ namespace engine::com::audio
 		AudioSessionNotification(std::function<void(void)> onSessionCreatedCallback);
 		virtual ~AudioSessionNotification() = default;
 
-		// IUnknownÀ»(¸¦) ÅëÇØ »ó¼ÓµÊ
+		// IUnknownì„(ë¥¼) í†µí•´ ìƒì†ë¨
 
 		HRESULT __stdcall QueryInterface(REFIID riid, void** ppvObject) override;
 		ULONG __stdcall AddRef(void) override;
 		ULONG __stdcall Release(void) override;
 
-		// IAudioSessionNotificationÀ»(¸¦) ÅëÇØ »ó¼ÓµÊ
+		// IAudioSessionNotificationì„(ë¥¼) í†µí•´ ìƒì†ë¨
 
 		HRESULT __stdcall OnSessionCreated(IAudioSessionControl* NewSession) override;
 

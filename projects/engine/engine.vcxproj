@@ -23,10 +23,15 @@
     <ClCompile Include="src\com\audio\mm_notification_client.cpp" />
     <ClCompile Include="src\com\audio\audio_manager.cpp" />
     <ClCompile Include="src\com\audio\audio_session_events.cpp" />
+    <ClCompile Include="src\data\preset_json_converter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
     <ClInclude Include="src\com.h" />
+    <ClInclude Include="src\common\json_helper.h" />
+    <ClInclude Include="src\common\logger.h" />
+    <ClInclude Include="src\common\tfstream.h" />
+    <ClInclude Include="src\common\tstring.h" />
     <ClInclude Include="src\com\audio.h" />
     <ClInclude Include="src\com\audio\audio_session_notification.h" />
     <ClInclude Include="src\com\audio\mm_notification_client.h" />
@@ -34,6 +39,7 @@
     <ClInclude Include="src\com\audio\audio_session_events.h" />
     <ClInclude Include="src\com\com_initializer.h" />
     <ClInclude Include="src\com\com_result.h" />
+    <ClInclude Include="src\data\preset_json_converter.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="engine.rc" />
@@ -118,6 +124,7 @@
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -142,6 +149,7 @@ xcopy "$(Outdir)*.lib" "$(SolutionDir)\lib\$(Configuration)\" /Y /I</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -164,6 +172,7 @@ xcopy "$(Outdir)*.lib" "$(SolutionDir)\lib\$(Configuration)\" /Y /I</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>
@@ -188,6 +197,7 @@ xcopy "$(Outdir)*.lib" "$(SolutionDir)\lib\$(Configuration)\" /Y /I</Command>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <LanguageStandard>stdcpp20</LanguageStandard>
       <LanguageStandard_C>stdc17</LanguageStandard_C>
+      <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
     </ClCompile>
     <Link>
       <SubSystem>

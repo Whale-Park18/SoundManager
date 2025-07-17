@@ -1,0 +1,33 @@
+{
+  "presetList": [
+    {
+      "name": "preset1",
+      "volume": 1,
+      "appList": [
+        {
+          "name": "preset1_app1",
+          "volume": 0.5
+          
+        },
+        {
+          "name": "preset1_app2",
+          "volume": 0.6
+        },
+        {
+          "name": "preset1_pp3",
+          "volume": 0.7
+        }
+      ]
+    },
+    {
+      "name": "preset2",
+      "volume": 0.5,
+      "appList": [
+        {
+          "name": "preset2_app1",
+          "volume": 0.8
+        }
+      ]
+    }
+  ]
+}
