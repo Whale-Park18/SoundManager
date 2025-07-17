@@ -25,6 +25,12 @@
     <Filter Include="src\data">
       <UniqueIdentifier>{6e651f44-2339-450e-85b3-b8561c1978e4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\windows\test">
+      <UniqueIdentifier>{2f66c775-eef1-47e8-9772-ebdf81a8d4f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\windows\utils">
+      <UniqueIdentifier>{12f62681-b24d-40dd-9fdd-e30544a70ee3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\com\audio\audio_manager.cpp">
@@ -41,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="src\data\preset_json_converter.cpp">
       <Filter>src\data</Filter>
+    </ClCompile>
+    <ClCompile Include="src\windows\test\logger.cpp">
+      <Filter>src\windows\test</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -83,6 +92,15 @@
     </ClInclude>
     <ClInclude Include="src\common\logger.h">
       <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\windows\test\logger.h">
+      <Filter>src\windows\test</Filter>
+    </ClInclude>
+    <ClInclude Include="src\windows\utils\unique_handle.h">
+      <Filter>src\windows\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\com.h">
+      <Filter>src</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

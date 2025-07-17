@@ -24,6 +24,7 @@
     <ClCompile Include="src\com\audio\audio_manager.cpp" />
     <ClCompile Include="src\com\audio\audio_session_events.cpp" />
     <ClCompile Include="src\data\preset_json_converter.cpp" />
+    <ClCompile Include="src\windows\test\logger.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="resource.h" />
@@ -40,6 +41,8 @@
     <ClInclude Include="src\com\com_initializer.h" />
     <ClInclude Include="src\com\com_result.h" />
     <ClInclude Include="src\data\preset_json_converter.h" />
+    <ClInclude Include="src\windows\test\logger.h" />
+    <ClInclude Include="src\windows\utils\unique_handle.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="engine.rc" />
