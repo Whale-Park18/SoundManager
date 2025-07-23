@@ -1,7 +1,0 @@
-<RCC>
-    <qresource prefix="/qt/qml/application">
-        <file>main.qml</file>
-        <file>qml/SideBar.qml</file>
-        <file>qml/test_item.qml</file>
-    </qresource>
-</RCC>
