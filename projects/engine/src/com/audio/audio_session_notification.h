@@ -5,13 +5,15 @@
 
 namespace engine::com::audio
 {
+	using SessionCreatedCallback = std::function<void(void)>;
+
 	/// <summary>
 	/// 오디오 생성 섹션 이벤트를 처리하는 클래스
 	/// </summary>
 	class AudioSessionNotification : public IAudioSessionNotification
 	{
 	public:
-		AudioSessionNotification(std::function<void(void)> onSessionCreatedCallback);
+		AudioSessionNotification(SessionCreatedCallback onSessionCreatedCallback);
 		virtual ~AudioSessionNotification() = default;
 
 		// IUnknown을(를) 통해 상속됨
@@ -27,6 +29,6 @@ namespace engine::com::audio
 	private:
 		ULONG _refCount = 0;
 
-		std::function<void(void)> _onSessionCreatedCallback = nullptr;
+		SessionCreatedCallback _onSessionCreatedCallback = nullptr;
 	};
 }

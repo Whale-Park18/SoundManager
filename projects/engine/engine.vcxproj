@@ -20,9 +20,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\com\audio\audio_session_notification.cpp" />
+    <ClCompile Include="src\com\audio\device_manager.cpp" />
     <ClCompile Include="src\com\audio\mm_notification_client.cpp" />
     <ClCompile Include="src\com\audio\audio_manager.cpp" />
     <ClCompile Include="src\com\audio\audio_session_events.cpp" />
+    <ClCompile Include="src\com\audio\session_manager.cpp" />
+    <ClCompile Include="src\com\audio\volume_controller.cpp" />
     <ClCompile Include="src\data\preset_json_converter.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -34,9 +37,12 @@
     <ClInclude Include="src\common\tstring.h" />
     <ClInclude Include="src\com\audio.h" />
     <ClInclude Include="src\com\audio\audio_session_notification.h" />
+    <ClInclude Include="src\com\audio\device_manager.h" />
     <ClInclude Include="src\com\audio\mm_notification_client.h" />
     <ClInclude Include="src\com\audio\audio_manager.h" />
     <ClInclude Include="src\com\audio\audio_session_events.h" />
+    <ClInclude Include="src\com\audio\session_manager.h" />
+    <ClInclude Include="src\com\audio\volume_controller.h" />
     <ClInclude Include="src\com\com_initializer.h" />
     <ClInclude Include="src\com\com_result.h" />
     <ClInclude Include="src\data\preset_json_converter.h" />

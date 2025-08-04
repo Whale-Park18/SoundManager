@@ -7,6 +7,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "solution_items", "solution_items", "{C8D5274F-AC00-46C7-1F8D-E88E81087A52}"
 	ProjectSection(SolutionItems) = preProject
 		solution_items\.editorconfig = solution_items\.editorconfig
+		.gitignore = .gitignore
+		vcpkg-configuration.json = vcpkg-configuration.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2350ABCF-BBD5-40DC-9A9C-19FBE4BEBDA2}"

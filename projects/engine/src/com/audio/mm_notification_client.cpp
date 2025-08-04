@@ -2,7 +2,9 @@
 
 #include <iostream>
 
-engine::com::audio::MMNotificationClient::MMNotificationClient() : _refCount(1)
+engine::com::audio::MMNotificationClient::MMNotificationClient(DeviceEventCallback&& callback)
+    : _refCount(1)
+	, _onDeviceChangedCallback(std::move(callback))
 {
 }
 

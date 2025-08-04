@@ -5,13 +5,15 @@
 
 namespace engine::com::audio
 {
+	using DeviceEventCallback = std::function<void(void)>;
+
 	/// <summary>
 	/// 오디오 장치 이벤트 리스너 클래스
 	/// </summary>
 	class MMNotificationClient : public IMMNotificationClient
 	{
 	public:
-		MMNotificationClient();
+		MMNotificationClient(DeviceEventCallback&& callback);
 		virtual~MMNotificationClient() = default;
 
 		// IUnknown을(를) 통해 상속됨
@@ -30,5 +32,6 @@ namespace engine::com::audio
 		ULONG _refCount = 0;
 
 		// 함수 객체를 사용하여 콜백을 등록
+		DeviceEventCallback _onDeviceChangedCallback = nullptr;
 	};
 }

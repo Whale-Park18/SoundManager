@@ -42,6 +42,15 @@
     <ClCompile Include="src\data\preset_json_converter.cpp">
       <Filter>src\data</Filter>
     </ClCompile>
+    <ClCompile Include="src\com\audio\device_manager.cpp">
+      <Filter>src\com\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\com\audio\volume_controller.cpp">
+      <Filter>src\com\audio</Filter>
+    </ClCompile>
+    <ClCompile Include="src\com\audio\session_manager.cpp">
+      <Filter>src\com\audio</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\com\com_initializer.h">
@@ -83,6 +92,15 @@
     </ClInclude>
     <ClInclude Include="src\common\logger.h">
       <Filter>src\common</Filter>
+    </ClInclude>
+    <ClInclude Include="src\com\audio\device_manager.h">
+      <Filter>src\com\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\com\audio\volume_controller.h">
+      <Filter>src\com\audio</Filter>
+    </ClInclude>
+    <ClInclude Include="src\com\audio\session_manager.h">
+      <Filter>src\com\audio</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

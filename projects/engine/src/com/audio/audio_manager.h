@@ -13,6 +13,12 @@
 #include <audiopolicy.h>	// 오디오 세션 제어 인터페이스
 #include <endpointvolume.h>	// 볼륨 제어 인터페이스
 
+// SOLID 패턴 적용 중
+// - AudioManager 클래스의 기능을 분리
+//     - 오디오 장치 관련 기능을 DeviceManager 클래스로 분리
+//     - 오디오 세션 관련 기능을 AudioSessionManager 클래스로 분리
+//     - 오디오 볼륨 제어 기능을 EndpointVolumeManager 클래스로 분리
+
 namespace engine::com::audio
 {
 	using ResultVolume = ComResult<float>;

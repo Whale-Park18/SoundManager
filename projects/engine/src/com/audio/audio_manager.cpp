@@ -256,7 +256,7 @@ HRESULT engine::com::audio::AudioManager::AddAudioDeviceEventListener()
 {
 	std::cout << "AudioManager::AddAudioDeviceEventListener()" << std::endl;
 	
-	_pAudioDeviceEventListener = new MMNotificationClient();
+	//_pAudioDeviceEventListener = new MMNotificationClient();
 	auto hr = _pDeviceEnumerator->RegisterEndpointNotificationCallback(_pAudioDeviceEventListener);
 	if(FAILED(hr))
 	{
