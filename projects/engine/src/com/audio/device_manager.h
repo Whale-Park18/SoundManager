@@ -12,6 +12,12 @@ namespace engine::com::audio
 	/// <summary>
 	/// 오디오 장치 관련 기능을 관리하는 클래스
 	/// </summary>
+	/// <remarks>
+	/// - 오디오 장치 초기화
+	///     1. "장치 열거자" 객체 초기화
+	///     2. "현재 사용 중인 장치"로 객체 초기화
+	/// - 오디오 장치 이벤트 리스너 등록
+	/// </remarks>
 	class DeviceManager
 	{
 	public:

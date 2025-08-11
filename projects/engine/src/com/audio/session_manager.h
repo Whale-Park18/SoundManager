@@ -11,6 +11,12 @@ namespace engine::com::audio
 	/// <summary>
 	/// 개별 어플리케이션의 오디오 세션을 관리하는 클래스
 	/// </summary>
+	/// <remarks>
+	/// - 오디오 섹션 초기화
+	///     1. "오디오 섹션 매니저" 객체 초기화
+	///     2. "오디오 섹션 열거자" 객체 초기화 (초기화 시점을 기준으로 개별 어플리케이션 나열됨)
+	/// - 오디오 섹션 생성 이벤트 리스너 등록
+	/// </remarks>
 	class SessionManager
 	{
 	public:

@@ -40,7 +40,32 @@ HRESULT engine::com::audio::SessionManager::Initialized()
 			break;
 		}
 
+		hr = UpdateAudioSessionEnumerator();
+
+	} while (false);
+
+	return hr;
+}
+
+HRESULT engine::com::audio::SessionManager::UpdateAudioSessionEnumerator()
+{
+	std::cout << "SessionManager::InitializeAudioSessionControlList()" << std::endl;
+	
+	HRESULT hr = E_FAIL;
+
+	do
+	{
+		// IAudioSessionManager2 객체 에외처리
+		if (_pAudioSessionManager == nullptr)
+		{
+			hr = E_HANDLE;
+
+			std::cout << "IAudioSessionManager2 is not initialized." << std::endl;
+			break;
+		}
+
 		// 오디오 섹션 열거자 초기화
+		// 이미 초기화된 오디오 섹션 열거자를 인자로 넘기도 예외 발생
 		if (_pAudioSessionEnumerator != nullptr)
 		{
 			_pAudioSessionEnumerator.Release();
@@ -57,11 +82,6 @@ HRESULT engine::com::audio::SessionManager::Initialized()
 	} while (false);
 
 	return hr;
-}
-
-HRESULT engine::com::audio::SessionManager::UpdateAudioSessionEnumerator()
-{
-	return E_NOTIMPL;
 }
 
 HRESULT engine::com::audio::SessionManager::AddAudioSessionEventListener(SessionCreatedCallback&& callback)
